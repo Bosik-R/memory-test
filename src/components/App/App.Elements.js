@@ -9,8 +9,9 @@ export const AppContainer = styled.section`
 `;
 
 export const AppWrapper = styled.div`
-	width: 700px;
-	height: 500px;
+	max-width: 700px;
+	width: 100%;
+	min-height: 500px;
 	background-color: #2b2734;
 	color: #ffffff;
 `;

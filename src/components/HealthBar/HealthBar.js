@@ -1,12 +1,12 @@
 import React from 'react';
 import * as S from './HealthBar.Elements';
 
-const HealthBar = () => {
+const HealthBar = ({ health }) => {
 	return (
-		<S.HealthBarWrapper>
+		<S.HealthBarContainer>
 			<S.Icon />
-			<S.HealthBar health={'2'}></S.HealthBar>
-		</S.HealthBarWrapper>
+			<S.HealthBar health={health}></S.HealthBar>
+		</S.HealthBarContainer>
 	);
 };
 

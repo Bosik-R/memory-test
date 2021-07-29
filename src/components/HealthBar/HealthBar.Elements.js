@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 import { Heart } from '@styled-icons/entypo/Heart';
 
-export const HealthBarWrapper = styled.section`
+export const HealthBarContainer = styled.section`
+	display: flex;
 	padding: 10px 20px;
 	margin: 10px;
-	display: flex;
 `;
 
 export const Icon = styled(Heart)`
 	color: #d90000;
-	height: 25px;
+	height: 20px;
 	margin-right: 12px;
 `;
 
 export const HealthBar = styled.div`
-	width: 200px;
-	height: 20px;
-	border: 3px solid #ffffff;
+	width: 150px;
+	height: 16px;
+	border: 2px solid #ffffff;
 	border-radius: 10px;
 	transition: all 0.5s ease;
 	background: #009700;
