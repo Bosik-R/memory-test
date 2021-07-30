@@ -4,7 +4,7 @@ import { ACTIONS } from '../App';
 
 const inputs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const InputKeyboard = ({ sequence, disable, health, dispatch}) => {
+const InputKeyboard = ({ sequence, disable, dispatch}) => {
   const [index, setIndex] = useState(0);
  
   const handleAnswer = (e, input) => {
@@ -15,8 +15,10 @@ const InputKeyboard = ({ sequence, disable, health, dispatch}) => {
       setIndex(index + 1)
 
       if(index === sequence.length -1 ){
-        dispatch({type: ACTIONS.LEVEL_COMPLETED})
-        setIndex(0)
+        setTimeout(() => {
+          dispatch({type: ACTIONS.LEVEL_COMPLETED})
+          setIndex(0)
+        }, 500)
       }  
     }else{
       dispatch({type: ACTIONS.BAD_VALUE})

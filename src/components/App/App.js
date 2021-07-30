@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from 'react';
 import DisplayDigit from '../DisplayDigit/DisplayDigit';
 import HealthBar from '../HealthBar/HealthBar';
+import Sidebar from '../Sidebar/Sidebar';
 import * as S from './App.Elements';
 import InputKeyboard from './InputKeyboard/InputKeyboard';
 
@@ -28,8 +29,10 @@ function reducer(state, action){
 				...state,
 				value: '',
 				answerList: [...state.answerList, state.answerArray],
-				score: state.score + state.level,
+				score: state.score + state.digits,
 				answerArray: [],
+				digits: state.digits + 1,
+				level: state.level + 1,
 			}
 
 		default:
@@ -42,7 +45,8 @@ const game = {
 	value: null,
 	disable: false,
 	health: 3,
-	level: 3,
+	level: 1,
+	digits: 3,
 	start: false,
 	answerArray: [],
 	answer: true,
@@ -58,9 +62,14 @@ const App = () => {
 	return (
 		<S.AppContainer>
 			<S.AppWrapper>
+				<S.DisplayColumn>
 				<HealthBar health={state.health}/>
-				<DisplayDigit level={state.level} value={state.value} />
+				<DisplayDigit {...state} dispatch={dispatch}/>
 				<InputKeyboard {...state} dispatch={dispatch}/>
+				</S.DisplayColumn>
+				<S.StatsColumn>
+					<Sidebar {...state}/>
+				</S.StatsColumn>
 			</S.AppWrapper>
 		</S.AppContainer>
 	);

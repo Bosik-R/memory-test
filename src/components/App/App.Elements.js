@@ -9,9 +9,19 @@ export const AppContainer = styled.section`
 `;
 
 export const AppWrapper = styled.div`
-	max-width: 700px;
+	max-width: 900px;
 	width: 100%;
-	min-height: 500px;
-	background-color: #2b2734;
+	min-height: 400px;
 	color: #ffffff;
+	display: flex;
+	`;
+
+export const DisplayColumn = styled.div`
+	width: 65%;
+	background-color: #2b2734;
+`;
+
+export const StatsColumn = styled.div`
+	width: 35%;
+	background-color: #36006c;
 `;
