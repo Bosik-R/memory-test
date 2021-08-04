@@ -1,41 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as S from './DisplayDigit.Elements';
+import Fader from '../Fader/Fader';
 
-const DisplayDigit = ({digits, value, sequence, dispatch}) => {
-  const [index, setIndex] = useState(0)
-  const [sequenceValue, setSequenceValue] = useState('');
-  const [show, setShow] = useState(false)
-  const [start, setStart] = useState(false);
-  console.log(sequenceValue);
-  
-  useEffect(()=> {
-    
-    if(start){
-      if(index < sequence.length){
-        setSequenceValue(sequence[index])
-        setShow(true)
-        
-        setTimeout(() => {
-          setShow(false)
-          setIndex(index + 1);
-        }, 1500)
-
-      }
-    }
-
-    return () => {clearTimeout()};
-
-  },[sequenceValue, start, index])
-
-  return (
-    <S.DisplayDigitContainer>
-      <S.DisplayDigitWrapper>
-        <S.DisplayLevel>{digits} Digits</S.DisplayLevel>
-        <S.DisplayDigitValue show={show}>{start ? sequenceValue : value}</S.DisplayDigitValue>
-      </S.DisplayDigitWrapper>
-      <button onClick={() => setStart(true)}>START</button>  
-    </S.DisplayDigitContainer>
-  )
-}
+const DisplayDigit = ({
+	digits,
+	value,
+	sequence,
+	start,
+	dispatch,
+	success,
+}) => {
+	return (
+		<S.DisplayDigitContainer>
+			<S.DisplayDigitWrapper>
+				<S.DisplayLevel success={success}>
+					{success ? 'Greate' : `${digits} Digits`}
+				</S.DisplayLevel>
+				<S.DisplayDigitValue>
+					{start ? (
+						<Fader sequence={sequence} dispatch={dispatch} />
+					) : (
+						<S.DigitValue>{value}</S.DigitValue>
+					)}
+				</S.DisplayDigitValue>
+			</S.DisplayDigitWrapper>
+		</S.DisplayDigitContainer>
+	);
+};
 
 export default DisplayDigit;
