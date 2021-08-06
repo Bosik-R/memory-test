@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ACTIONS } from '../App/App';
+import { ACTIONS } from '../../utils/reducer';
 import styled from 'styled-components';
 
 const ValueFader = styled.span`

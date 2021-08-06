@@ -1,7 +1,7 @@
 import React from 'react';
 import DisplayStats from '../DisplayStats/DisplayStats';
 import * as S from './Siedebar.Elements';
-import { ACTIONS } from '../App/App';
+import { ACTIONS } from '../../utils/reducer';
 import { randomArray } from '../../utils/randomArray';
 
 const Sidebar = ({ level, score, start, digits, dispatch }) => {
@@ -21,7 +21,7 @@ const Sidebar = ({ level, score, start, digits, dispatch }) => {
 			<DisplayStats title='level' value={level} />
 			<DisplayStats title='score' value={score} />
 			<S.StartBtn play={start} onClick={() => handleStart()}>
-				{start ? 'ANSWER...' : 'START'}
+				START
 			</S.StartBtn>
 		</S.SidebarContainer>
 	);

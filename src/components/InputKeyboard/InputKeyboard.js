@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './InputKeyboard.Elements';
-import { ACTIONS } from '../App';
+import { ACTIONS } from '../../utils/reducer';
 
 const inputs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
