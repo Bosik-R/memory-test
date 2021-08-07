@@ -7,11 +7,11 @@ const inputs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const InputKeyboard = ({ sequence, disable, dispatch }) => {
 	const [index, setIndex] = useState(0);
 
-	const handleAnswer = (e, input) => {
-		//e.preventDefault();
+	const handleAnswer = (inputValue) => {
+		console.log(inputValue);
 
-		if (input === sequence[index]) {
-			dispatch({ type: ACTIONS.GOOD_VALUE, payload: input });
+		if (inputValue === sequence[index]) {
+			dispatch({ type: ACTIONS.GOOD_VALUE, payload: inputValue });
 			setIndex(index + 1);
 
 			if (index === sequence.length - 1) {
@@ -21,6 +21,7 @@ const InputKeyboard = ({ sequence, disable, dispatch }) => {
 				}, 1000);
 			}
 		} else {
+			console.log('działa bad value');
 			dispatch({ type: ACTIONS.BAD_VALUE });
 			setIndex(0);
 		}
@@ -29,13 +30,13 @@ const InputKeyboard = ({ sequence, disable, dispatch }) => {
 	return (
 		<S.InputKeyboardContainer>
 			<S.InputKeyboardWrapper>
-				{inputs.map((input, index) => (
+				{inputs.map((inputValue, index) => (
 					<S.Btn
 						key={index}
-						onClick={(e) => handleAnswer(e, input)}
+						onClick={(e) => handleAnswer(inputValue)}
 						disabled={disable}
 					>
-						{input}
+						{inputValue}
 					</S.Btn>
 				))}
 			</S.InputKeyboardWrapper>

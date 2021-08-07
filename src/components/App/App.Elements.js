@@ -6,6 +6,7 @@ export const AppContainer = styled.section`
 	background-color: black;
 	display: grid;
 	place-items: center;
+	position: relative;
 `;
 
 export const AppWrapper = styled.div`

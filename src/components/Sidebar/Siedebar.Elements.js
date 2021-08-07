@@ -20,4 +20,5 @@ export const StartBtn = styled.button`
 	border: 1px solid #ffffff;
 	border-radius: 10px;
 	transition: all 0.5s ease;
+	cursor: pointer;
 `;

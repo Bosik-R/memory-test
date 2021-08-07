@@ -15,18 +15,11 @@ export const reducer = (state, action) => {
 				disable: false,
 			};
 		case ACTIONS.GOOD_VALUE:
+			console.log('good value');
 			return {
 				...state,
 				value: action.payload,
 				answerArray: [...state.answerArray, action.payload],
-			};
-		case ACTIONS.BAD_VALUE:
-			return {
-				...state,
-				start: false,
-				answerArray: [],
-				answer: false,
-				sequence: [],
 			};
 		case ACTIONS.LEVEL_COMPLETED:
 			return {
@@ -39,6 +32,12 @@ export const reducer = (state, action) => {
 				level: state.level + 1,
 				success: true,
 			};
+		case ACTIONS.BAD_VALUE:
+			console.log('value działa');
+			return {
+				...state,
+				health: state.health - 1,
+			}
 		default:
 			return state;
 	}
@@ -46,8 +45,9 @@ export const reducer = (state, action) => {
 
 export const ACTIONS = {
 	GOOD_VALUE: 'show_value',
-	BAD_VALUE: 'end_sequence',
+	BAD_VALUE: 'end_round',
 	END_GAME: 'end_game',
+	VALUE: 'value',
 	LEVEL_COMPLETED: 'level_completed',
 	START_SEQUENCE: 'start_level',
 	END_SEQUENCE: 'end_sequence',
