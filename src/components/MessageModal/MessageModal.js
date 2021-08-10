@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './MessageModal.Elements';
 import { ACTIONS } from '../../utils/reducer';
 
-const MessangeModal = ({
+const MessageModal = ({
 	health,
 	level,
 	score,
@@ -36,4 +36,4 @@ const MessangeModal = ({
 	);
 };
 
-export default MessangeModal;
+export default MessageModal;

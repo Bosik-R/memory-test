@@ -6,15 +6,17 @@ import * as S from './App.Elements';
 import InputKeyboard from '../InputKeyboard/InputKeyboard';
 import { reducer } from '../../utils/reducer';
 import { game } from '../../utils/initialState';
-import MessangeModal from '../MessageModal/MessangeModal';
+import MessageModal from '../MessageModal/MessageModal';
+import WelcomeView from '../WelcomeView/WelcomeView';
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, game);
 
 	return (
 		<S.AppContainer>
+			{state.welcome && <WelcomeView digits={state.digits} dispatch={dispatch}/>}
 			<S.AppWrapper>
-				{state.modal && <MessangeModal {...state} dispatch={dispatch} />}
+				{state.modal && <MessageModal {...state} dispatch={dispatch} />}
 				<S.DisplayColumn>
 					<HealthBar health={state.health} />
 					<DisplayDigit {...state} dispatch={dispatch} />

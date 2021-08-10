@@ -52,6 +52,10 @@ export const reducer = (state, action) => {
 			};
 		case ACTIONS.RESET:
 			return game;
+		case ACTIONS.CLOSE_WELCOME:
+			return { ...state, welcome: false }
+		case ACTIONS.DIGIT_LENGTH:
+			return { ...state, digits: action.payload.digits, level: action.payload.level }
 		default:
 			return state;
 	}
@@ -67,4 +71,6 @@ export const ACTIONS = {
 	LEVEL_COMPLETED: 'level_completed',
 	START_SEQUENCE: 'start_level',
 	END_SEQUENCE: 'end_sequence',
+	CLOSE_WELCOME: 'close_welcome',
+	DIGIT_LENGTH: 'digit_length'
 };

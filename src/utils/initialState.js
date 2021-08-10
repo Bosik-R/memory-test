@@ -11,4 +11,5 @@ export const game = {
 	sequence: [],
 	answerList: [],
 	score: 0,
+	welcome: true,
 };
