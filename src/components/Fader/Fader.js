@@ -8,7 +8,7 @@ const ValueFader = styled.span`
 	margin: 0;
 	padding: 0;
 	opacity: ${({ show }) => (show ? '1' : '0')};
-	transition: all 1s ease;
+	transition: all 0.6s ease-in-out;
 `;
 
 const Fader = ({ sequence, dispatch }) => {
@@ -20,16 +20,16 @@ const Fader = ({ sequence, dispatch }) => {
 			const timeout = setInterval(() => {
 				if (show) {
 					setShow(false);
-					setTimeout(() => setIndex(index + 1), 1500);
+					setTimeout(() => setIndex(index + 1), 1000);
 				} else {
 					setShow(true);
 				}
-			}, 1500);
+			}, 1000);
 			return () => clearInterval(timeout);
 		} else {
 			dispatch({ type: ACTIONS.END_SEQUENCE });
 		}
-	}, [index, show]);
+	}, [index, show, sequence.length, dispatch]);
 
 	return <ValueFader show={show}>{sequence[index]}</ValueFader>;
 };

@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './InputKeyboard.Elements';
 import { ACTIONS } from '../../utils/reducer';
 
 const inputs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const InputKeyboard = ({ sequence, disable, dispatch }) => {
-	const [index, setIndex] = useState(0);
-
+const InputKeyboard = ({ sequence, index, disable, dispatch }) => {
 	const handleAnswer = (inputValue) => {
-		console.log(inputValue);
-
 		if (inputValue === sequence[index]) {
-			dispatch({ type: ACTIONS.GOOD_VALUE, payload: inputValue });
-			setIndex(index + 1);
+			dispatch({ type: ACTIONS.GOOD_ANSWER, payload: inputValue });
 
 			if (index === sequence.length - 1) {
 				setTimeout(() => {
 					dispatch({ type: ACTIONS.LEVEL_COMPLETED });
-					setIndex(0);
 				}, 1000);
 			}
 		} else {
-			console.log('działa bad value');
-			dispatch({ type: ACTIONS.BAD_VALUE });
-			setIndex(0);
+			dispatch({ type: ACTIONS.BAD_ANSWER, payload: inputValue });
 		}
 	};
 

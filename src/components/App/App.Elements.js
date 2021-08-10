@@ -15,7 +15,8 @@ export const AppWrapper = styled.div`
 	min-height: 400px;
 	color: #ffffff;
 	display: flex;
-	`;
+	position: relative;
+`;
 
 export const DisplayColumn = styled.div`
 	width: 65%;

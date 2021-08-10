@@ -6,16 +6,15 @@ import * as S from './App.Elements';
 import InputKeyboard from '../InputKeyboard/InputKeyboard';
 import { reducer } from '../../utils/reducer';
 import { game } from '../../utils/initialState';
-import GameOver from '../GameOver/GameOver';
+import MessangeModal from '../MessageModal/MessangeModal';
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, game);
-	console.log(state);
 
 	return (
 		<S.AppContainer>
-			{state.health === 0 ? <GameOver/> : null}
 			<S.AppWrapper>
+				{state.modal && <MessangeModal {...state} dispatch={dispatch} />}
 				<S.DisplayColumn>
 					<HealthBar health={state.health} />
 					<DisplayDigit {...state} dispatch={dispatch} />

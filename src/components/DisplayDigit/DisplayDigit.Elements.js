@@ -22,7 +22,6 @@ export const DisplayLevel = styled.h1`
 	margin: 0 0 20px 0;
 	font-size: 30px;
 	text-align: center;
-	color: ${({ success }) => (success ? '#3d9832' : '#ffffff')};
 `;
 
 export const DisplayDigitValue = styled.div`

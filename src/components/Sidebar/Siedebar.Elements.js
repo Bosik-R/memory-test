@@ -21,4 +21,8 @@ export const StartBtn = styled.button`
 	border-radius: 10px;
 	transition: all 0.5s ease;
 	cursor: pointer;
+
+	&:hover {
+		${({ play }) => (play ? '' : 'transform: scale(1.02);')};
+	}
 `;
