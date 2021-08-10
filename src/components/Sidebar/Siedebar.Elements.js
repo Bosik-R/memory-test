@@ -7,6 +7,27 @@ export const SidebarContainer = styled.section`
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+
+	@media (max-width: 768px) {
+		flex-direction: row;
+		//justify-content: center;
+		justify-content: space-around;
+		align-items: center;
+	}
+	@media (max-width: 425px) {
+		flex-direction: column;
+		justify-content: space-around;
+	}
+`;
+export const StatsWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	@media (max-width: 768px) {
+		flex-direction: row;
+	}
 `;
 
 export const StartBtn = styled.button`
@@ -18,11 +39,16 @@ export const StartBtn = styled.button`
 	color: ${({ play }) => (play ? '#000000' : '#ffffff')};
 	color: #ffffff;
 	border: 1px solid #ffffff;
-	border-radius: 10px;
+	border-radius: 20px;
 	transition: all 0.5s ease;
 	cursor: pointer;
 
 	&:hover {
 		${({ play }) => (play ? '' : 'transform: scale(1.02);')};
+	}
+
+	@media (max-width: 768px) {
+		font-size: 40px;
+		padding: 6px 50px;
 	}
 `;

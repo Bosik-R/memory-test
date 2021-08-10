@@ -14,8 +14,10 @@ const Sidebar = ({ level, score, disable, dispatch }) => {
 
 	return (
 		<S.SidebarContainer>
-			<DisplayStats title='level' value={level} />
-			<DisplayStats title='score' value={score} />
+			<S.StatsWrapper>
+				<DisplayStats title='level' value={level} />
+				<DisplayStats title='score' value={score} />
+			</S.StatsWrapper>
 			<S.StartBtn
 				onClick={() => handleStart()}
 				disabled={!disable}

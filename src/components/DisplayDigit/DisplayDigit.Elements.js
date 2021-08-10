@@ -7,21 +7,24 @@ export const DisplayDigitContainer = styled.section`
 `;
 
 export const DisplayDigitWrapper = styled.div`
-	width: 150px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	padding: 15px;
-	color: ${({ disabled }) => (disabled ? '#9b9b9b' : '#ffffff')};
+	color: #ffffff;
 `;
 
-export const DisplayLevel = styled.h1`
+export const DigitsInfo = styled.h1`
 	width: 100%;
 	color: inherit;
 	margin: 0 0 20px 0;
 	font-size: 30px;
 	text-align: center;
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
 `;
 
 export const DisplayDigitValue = styled.div`
@@ -33,7 +36,11 @@ export const DisplayDigitValue = styled.div`
 	background-color: #646464;
 	display: grid;
 	place-items: center;
-	padding: 5px;
+
+	@media (max-width: 425px) {
+		width: 70px;
+		height: 70px;
+	}
 `;
 
 export const DigitValue = styled.span`
@@ -42,4 +49,9 @@ export const DigitValue = styled.span`
 	font-size: 70px;
 	line-height: 70px;
 	font-weight: bold;
+
+	@media (max-width: 425px) {
+		font-size: 40px;
+		line-height: 40px;
+	}
 `;

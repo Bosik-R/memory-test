@@ -6,7 +6,7 @@ const DisplayDigit = ({ digits, value, sequence, start, dispatch }) => {
 	return (
 		<S.DisplayDigitContainer>
 			<S.DisplayDigitWrapper>
-				<S.DisplayLevel>{`${digits} Digits`}</S.DisplayLevel>
+				<S.DigitsInfo>{`${digits}  Digits`}</S.DigitsInfo>
 				<S.DisplayDigitValue>
 					{start ? (
 						<Fader sequence={sequence} dispatch={dispatch} />
