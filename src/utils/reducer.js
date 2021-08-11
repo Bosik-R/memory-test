@@ -51,11 +51,15 @@ export const reducer = (state, action) => {
 				index: 0,
 			};
 		case ACTIONS.RESET:
-			return game;
+			return { ...game, welcome: false };
 		case ACTIONS.CLOSE_WELCOME:
-			return { ...state, welcome: false }
+			return { ...state, welcome: false };
 		case ACTIONS.DIGIT_LENGTH:
-			return { ...state, digits: action.payload.digits, level: action.payload.level }
+			return {
+				...state,
+				digits: action.payload.digits,
+				level: action.payload.level,
+			};
 		default:
 			return state;
 	}
@@ -72,5 +76,5 @@ export const ACTIONS = {
 	START_SEQUENCE: 'start_level',
 	END_SEQUENCE: 'end_sequence',
 	CLOSE_WELCOME: 'close_welcome',
-	DIGIT_LENGTH: 'digit_length'
+	DIGIT_LENGTH: 'digit_length',
 };

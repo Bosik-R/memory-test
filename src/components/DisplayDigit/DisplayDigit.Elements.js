@@ -25,6 +25,10 @@ export const DigitsInfo = styled.h1`
 		font-size: 20px;
 		margin-bottom: 10px;
 	}
+	@media (max-width: 340px) {
+		font-size: 15px;
+		margin-bottom: 5px;
+	}
 `;
 
 export const DisplayDigitValue = styled.div`
@@ -38,8 +42,8 @@ export const DisplayDigitValue = styled.div`
 	place-items: center;
 
 	@media (max-width: 425px) {
-		width: 70px;
-		height: 70px;
+		width: 80px;
+		height: 80px;
 	}
 `;
 

@@ -4,7 +4,7 @@ export const game = {
 	disable: true,
 	health: 3,
 	level: 1,
-	digits: 2,
+	digits: 3,
 	start: false,
 	answerArray: [],
 	modal: false,

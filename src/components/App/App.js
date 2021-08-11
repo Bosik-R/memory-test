@@ -14,10 +14,10 @@ const App = () => {
 
 	return (
 		<S.AppContainer>
-			{state.welcome && (
-				<WelcomeView digits={state.digits} dispatch={dispatch} />
-			)}
 			<S.AppWrapper>
+				{state.welcome && (
+					<WelcomeView digits={state.digits} dispatch={dispatch} />
+				)}
 				{state.modal && <MessageModal {...state} dispatch={dispatch} />}
 				<S.DisplayColumn>
 					<HealthBar health={state.health} />
