@@ -8,7 +8,7 @@ const WelcomeView = ({ digits, dispatch }) => {
 
 		dispatch({
 			type: ACTIONS.DIGIT_LENGTH,
-			payload: { digits: parsedValue, level: parsedValue + 2 },
+			payload: { digits: parsedValue, level: parsedValue - 2 },
 		});
 	};
 
