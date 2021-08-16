@@ -17,8 +17,9 @@ const WelcomeView = ({digits, dispatch}) => {
           <S.Paragraph>Test your memory by using Cambrige App clone</S.Paragraph>
         </S.Row>
         <S.Row>
-          <S.Paragraph>Press <S.Image src='images/rsz_startbtn.png' alt='start button'/> to play the sequence in the display box <S.Image src='images/rsz_displaybox.png' alt='display box'/></S.Paragraph>
-          <S.Paragraph>The amount of digits to memorize is shown above the display box  <S.Image src='images/rsz_digits.png' alt='digits'/>. </S.Paragraph>          <S.Paragraph>After the sequence is finished you can enter your answer.</S.Paragraph>
+          <S.Paragraph>Press <S.Image src='images/startbtn.png' alt='start button'/> to play the sequence in the display box <S.Image src='images/displaybox.png' alt='display box'/></S.Paragraph>
+          <S.Paragraph>The amount of digits to memorize is shown above the display box  <S.Image src='images/digits.png' alt='digits'/>.</S.Paragraph>
+          <S.Paragraph>After the sequence is finished you can enter your answer.</S.Paragraph>
         </S.Row>
         <S.Row>
           <S.Col>
