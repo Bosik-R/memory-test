@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ACTIONS } from '../../utils/reducer';
 import styled from 'styled-components';
+import { DigitValue } from '../DisplayDigit/DisplayDigit.Elements';
 
-const ValueFader = styled.span`
-	font-size: 70px;
-	font-weight: bold;
-	margin: 0;
-	padding: 0;
+const ValueFader = styled(DigitValue)`
 	opacity: ${({ show }) => (show ? '1' : '0')};
 	transition: all 0.6s ease-in-out;
 `;

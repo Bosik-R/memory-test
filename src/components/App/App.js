@@ -2,20 +2,22 @@ import React, { useReducer } from 'react';
 import DisplayDigit from '../DisplayDigit/DisplayDigit';
 import HealthBar from '../HealthBar/HealthBar';
 import Sidebar from '../Sidebar/Sidebar';
-import * as S from './App.Elements';
 import InputKeyboard from '../InputKeyboard/InputKeyboard';
-import { reducer } from '../../utils/reducer';
-import { game } from '../../utils/initialState';
 import MessageModal from '../MessageModal/MessageModal';
 import WelcomeView from '../WelcomeView/WelcomeView';
+import { reducer } from '../../utils/reducer';
+import { game } from '../../utils/initialState';
+import * as S from './App.Elements';
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, game);
 
 	return (
 		<S.AppContainer>
-			{state.welcome && <WelcomeView digits={state.digits} dispatch={dispatch}/>}
 			<S.AppWrapper>
+				{state.welcome && (
+					<WelcomeView digits={state.digits} dispatch={dispatch} />
+				)}
 				{state.modal && <MessageModal {...state} dispatch={dispatch} />}
 				<S.DisplayColumn>
 					<HealthBar health={state.health} />

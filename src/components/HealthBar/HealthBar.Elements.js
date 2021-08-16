@@ -4,19 +4,27 @@ import { Heart } from '@styled-icons/entypo/Heart';
 export const HealthBarContainer = styled.section`
 	display: flex;
 	padding: 10px 20px;
-	margin: 10px;
 `;
 
 export const Icon = styled(Heart)`
 	color: #d90000;
 	height: 20px;
 	margin-right: 12px;
+
+	@media (max-width: 768px) {
+		height: 16px;
+	}
+
+	@media (max-width: 425px) {
+		height: 14px;
+	}
 `;
 
 export const HealthBar = styled.div`
 	width: 150px;
 	height: 16px;
-	border: 2px solid #ffffff;
+	border: 2px solid;
+	border-color: #ffffff;
 	border-radius: 10px;
 	transition: all 0.5s ease;
 	background: #009700;
@@ -34,4 +42,14 @@ export const HealthBar = styled.div`
 				return `background: linear-gradient(90deg, #009700 100%);`;
 		}
 	}}
+
+	@media (max-width: 768px) {
+		height: 14px;
+		border: 1px solid;
+	}
+
+	@media (max-width: 425px) {
+		height: 12px;
+		border: 1px solid;
+	}
 `;
