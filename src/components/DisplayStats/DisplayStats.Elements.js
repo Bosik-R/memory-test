@@ -20,7 +20,7 @@ export const StatsTitle = styled.span`
 	margin-bottom: 10px;
 
 	@media (max-width: 425px) {
-		font-size: 25px;
+		font-size: 18px;
 	}
 `;
 
@@ -35,8 +35,8 @@ export const StatsCircle = styled.div`
 	background-color: #646464;
 
 	@media (max-width: 425px) {
-		width: 45px;
-		height: 45px;
+		width: 35px;
+		height: 35px;
 		padding: 5px;
 	}
 `;

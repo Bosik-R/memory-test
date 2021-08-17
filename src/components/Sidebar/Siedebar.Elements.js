@@ -14,10 +14,10 @@ export const SidebarContainer = styled.section`
 		justify-content: space-around;
 		align-items: center;
 	}
-	@media (max-width: 425px) {
+	/* @media (max-width: 425px) {
 		flex-direction: column;
 		justify-content: space-around;
-	}
+	} */
 `;
 export const StatsWrapper = styled.div`
 	display: flex;
@@ -40,15 +40,22 @@ export const StartBtn = styled.button`
 	color: #ffffff;
 	border: 1px solid #ffffff;
 	border-radius: 20px;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 	cursor: pointer;
 
 	&:hover {
-		${({ play }) => (play ? '' : 'transform: scale(1.02);')};
+		${({ play }) => (play ? '' : 'border-color: #ff8000;')};
 	}
 
 	@media (max-width: 768px) {
 		font-size: 40px;
 		padding: 6px 50px;
 	}
+
+	@media (max-width: 425px) {
+		font-size: 25px;
+		padding: 15px;
+	}
+
 `;
+

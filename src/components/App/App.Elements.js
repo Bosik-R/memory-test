@@ -30,27 +30,33 @@ export const AppWrapper = styled.div`
 `;
 
 export const DisplayColumn = styled.div`
-	width: 65%;
+	width: 68%;
 	background-color: #2b2734;
 
 	@media (max-width: 768px) {
 		width: 100%;
-		height: 62%;
+		height: 68%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
 		padding-bottom: 20px;
 	}
+	@media (max-width: 425px) {
+		height: 75%;
+	}
 `;
 
 export const StatsColumn = styled.div`
-	width: 35%;
+	width: 32%;
 	background-color: #36006c;
 	display: flex;
 
 	@media (max-width: 768px) {
 		width: 100%;
-		height: 38%;
+		height: 32%;
+	}
+	@media (max-width: 425px) {
+		height: 25%;
 	}
 `;

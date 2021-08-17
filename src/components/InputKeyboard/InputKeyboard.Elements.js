@@ -38,7 +38,10 @@ export const Btn = styled.button`
 	}
 
 	@media (max-width: 425px) {
-		width: 50px;
-		height: 50px;
+		width: 47px;
+		height: 47px;
+		font-size: 20px;
+		line-height: 20px;
+		margin: 6px;
 	}
 `;
