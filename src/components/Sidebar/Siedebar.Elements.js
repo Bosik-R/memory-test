@@ -47,6 +47,10 @@ export const StartBtn = styled.button`
 		${({ play }) => (play ? '' : 'border-color: #ff8000;')};
 	}
 
+	&:focus-visible {
+		
+	}
+
 	@media (max-width: 768px) {
 		font-size: 40px;
 		padding: 6px 50px;

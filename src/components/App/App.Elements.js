@@ -43,6 +43,7 @@ export const DisplayColumn = styled.div`
 		padding-bottom: 20px;
 	}
 	@media (max-width: 425px) {
+		justify-content: flex-end;
 		height: 75%;
 	}
 `;
