@@ -32,6 +32,7 @@ export const AppWrapper = styled.div`
 export const DisplayColumn = styled.div`
 	width: 68%;
 	background-color: #2b2734;
+	position: relative;
 
 	@media (max-width: 768px) {
 		width: 100%;
@@ -46,6 +47,12 @@ export const DisplayColumn = styled.div`
 		justify-content: flex-end;
 		height: 75%;
 	}
+`;
+
+export const ThemeButtonWrapper = styled.div`
+	position: absolute;
+	top: 10px;
+	right: 10px;
 `;
 
 export const StatsColumn = styled.div`
